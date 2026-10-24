@@ -1,0 +1,39 @@
+/* Tokens, reset, type and form controls */
+:root{
+  --bg:#0c1715;--panel:#121f1c;--raise:#192a26;--hover:#213631;
+  --line:#243833;--line2:#355048;
+  --ink:#e0ebe5;--mute:#8aa098;
+  --acc:#6cc3a6;--accd:#06231c;   /* verdigris */
+  --cu:#d09a6e;                   /* bare copper */
+  --bad:#f19a8a;--a:1.5;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 "Instrument Sans",system-ui,sans-serif;font-variant-numeric:tabular-nums;color-scheme:dark}
+::selection{background:#6cc3a64d}
+[hidden]{display:none!important}
+h1,h2,h3,summary{font-family:"Bricolage Grotesque",system-ui,sans-serif}
+:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+
+input,select,textarea{font:inherit;color:inherit;background:#0e1816;border:1px solid var(--line);border-radius:8px;padding:0 12px;height:38px;width:100%;transition:border-color .15s}
+textarea{padding:10px 12px;height:auto;resize:vertical}
+input:hover,select:hover,textarea:hover{border-color:var(--line2)}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--acc)}
+input[type=checkbox]{width:16px;height:16px;margin-top:3px;accent-color:var(--acc);flex:none}
+input[type=range]{-webkit-appearance:none;appearance:none;height:20px;padding:0;border:0;background:transparent}
+input[type=range]::-webkit-slider-runnable-track{height:4px;background:var(--line2);border-radius:2px}
+input[type=range]::-moz-range-track{height:4px;background:var(--line2);border-radius:2px}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;margin-top:-6px;border-radius:50%;background:var(--cu);border:0;box-shadow:0 0 0 3px var(--panel)}
+input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--cu);border:0}
+input[type=range]:focus-visible::-webkit-slider-thumb{background:var(--acc)}
+label{display:block;color:var(--mute);font-size:12.5px;margin:12px 0 5px}
+label.i{display:flex;gap:10px;align-items:flex-start;color:var(--ink)}
+
+button{font:inherit;font-weight:500;cursor:pointer;height:38px;padding:0 16px;border-radius:8px;border:1px solid var(--line);background:var(--raise);color:var(--ink);white-space:nowrap;transition:background .15s,border-color .15s,transform .05s}
+button:hover{background:var(--hover);border-color:var(--line2)}
+button:active{transform:translateY(1px)}
+button:disabled{opacity:.4;cursor:default;transform:none}
+button.pri{background:var(--acc);border-color:var(--acc);color:var(--accd);font-weight:600}
+button.pri:hover{background:#86d3b9;border-color:#86d3b9}
+
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
